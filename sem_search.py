@@ -1,5 +1,3 @@
-import csv
-import sys
 from txtai.embeddings import Embeddings
 
 embeddings = Embeddings({"path": "sentence-transformers/nli-mpnet-base-v2"})
