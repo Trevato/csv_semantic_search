@@ -3,3 +3,4 @@
 /__pycache__
 /similarity.py
 /similarity_search.py
+embedding_storage*

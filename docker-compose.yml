@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    command: ["streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.enableCORS=false", "--browser.serverAddress=your_domain.com"]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: 1
+            capabilities: [gpu]
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
