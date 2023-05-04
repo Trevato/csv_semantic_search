@@ -1,3 +1,5 @@
 streamlit
 txtai
 duckdb
+pandas
+pickle

@@ -2,10 +2,14 @@ import streamlit as st
 import pandas as pd
 import hashlib
 import pickle
+import os
 
 from txtai.embeddings import Embeddings
 
 embeddings = Embeddings({"path": "sentence-transformers/nli-mpnet-base-v2"})
+
+if not os.path.exists("ebedding_storage/"):
+    os.makedirs("embedding_storage/")
 
 
 def create_1d_string_list(data, cols):

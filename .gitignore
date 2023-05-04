@@ -4,3 +4,8 @@
 /similarity.py
 /similarity_search.py
 embedding_storage*
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
